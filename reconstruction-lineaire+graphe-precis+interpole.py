@@ -117,3 +117,10 @@ plt.grid(True)
 """
 # 3. Show result on screen
 plt.show()
+
+# prepare data
+data = np.array([tempsvisu, resultatA])
+data = np.transpose(data)
+
+with open('fichier-test.txt','wb') as f: # here you open the ascii file
+    np.savetxt(f, data, fmt = '%.2f')    # here the ascii file is populated
