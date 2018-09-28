@@ -9,7 +9,7 @@ from gradient import * # Packages and modules should have short, all-lowercase n
 # http://www.python.org/dev/peps/pep-0008/
 
 # 1. vecteur des expressions g_{c, r}(t)
-gene		= '2616'
+gene		= '2613'
 # mes nombres issus de excel ont ',' comme séparateur avant la partie décimale
 gbinaire        = open('donnees/gene_'+gene+'_gmkA.txt').read().replace(',','.').encode()
 g_gene		= np.genfromtxt(BytesIO(gbinaire), missing_values = 'NA', filling_values = np.nan, skip_header = 1)
@@ -94,20 +94,20 @@ observationA, observationM = mesure(T)
 figure1 = plt.figure(figsize = (8, 6), dpi = 80)
 figure1.canvas.set_window_title('My title')
 
-plt.subplot(1,2,1)
+#plt.subplot(1,2,1)
 # 2. Plot (T, resultatA)
-plt.plot(tempsvisu, resultatA, '-', label = 'mu alginate')
-plt.plot(T, observationA, 'o', label = 'g_gene_'+gene+' alginate')
+plt.plot(tempsvisu, resultatA, '-', label = 'expression théorique gène '+gene)
+plt.plot(T, observationA, 'o', label = 'données gène '+gene)
 plt.legend()
 plt.grid(True)
-"""
-plt.subplot(1,2,2)
+
+#plt.subplot(1,2,2)
 # 2. Plot (T, resultatM)
-plt.plot(tempsvisu, resultatM, '-', label = 'mu maltose')
-plt.plot(T, observationM, 'o', label = 'g_gene_'+gene+' maltose')
-plt.legend()
-plt.grid(True)
-"""
+#plt.plot(tempsvisu, resultatM, '-', label = 'mu maltose')
+#plt.plot(T, observationM, 'o', label = 'g_gene_'+gene+' maltose')
+#plt.legend()
+#plt.grid(True)
+
 # 3. Show result on screen
 plt.show()
 """
